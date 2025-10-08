@@ -3,10 +3,10 @@ FROM node:18 AS builder
 
 WORKDIR /app
 
-# Copy all files (index.html, CSS, JS, images, etc.)
+# Copy all static site files (index.html, CSS, JS, images, etc.)
 COPY . .
 
-# No build step needed for plain HTML, but keeping the stage for parity with Next.js Dockerfile
+# No build step required for pure HTML site
 
 # Step 2: Serve with Nginx
 FROM nginx:alpine
@@ -17,9 +17,19 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy static site from builder
 COPY --from=builder /app /usr/share/nginx/html
 
-# Expose internal Nginx port 80
-EXPOSE 80
+# Configure Nginx to listen on port 7001
+RUN echo 'server {\n\
+    listen       7001;\n\
+    server_name  localhost;\n\
+    location / {\n\
+        root   /usr/share/nginx/html;\n\
+        index  index.html;\n\
+        try_files $uri /index.html;\n\
+    }\n\
+}' > /etc/nginx/conf.d/default.conf
 
+# Expose internal container port 7001
+EXPOSE 7001
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]

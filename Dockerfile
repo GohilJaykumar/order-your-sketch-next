@@ -36,4 +36,6 @@ EXPOSE 7001
 ENV PORT=7001
 
 # Start the app in production mode
-CMD ["npm", "run", "start", "--", "-p", "${PORT}"]
+# CMD ["npm", "run", "start", "--", "-p", "${PORT}"]
+CMD npm run start -- -p $PORT
+

@@ -1,5 +1,3 @@
-ARG ENV_FILE_PATH
-
 # Step 1: Build the application
 FROM node:18 AS builder
 
@@ -22,9 +20,6 @@ FROM node:18
 # Set the working directory
 WORKDIR /app
 
-# Copy the .env file from the external location into the Docker container
-COPY ${ENV_FILE_PATH} ./.env
-
 # Install production dependencies
 COPY package.json package-lock.json ./
 RUN npm install --only=production
@@ -37,9 +32,8 @@ COPY --from=builder /app/node_modules ./node_modules
 # Expose the port on which the app will run
 EXPOSE 7001
 
-# Set the environment variable for the port
+# Set the environment variable for the port (Optional, can also be passed at runtime)
 ENV PORT=7001
 
 # Start the app in production mode
-# CMD ["npm", "start"]
 CMD ["npm", "run", "start", "--", "-p", "${PORT}"]

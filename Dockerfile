@@ -1,3 +1,5 @@
+ARG ENV_FILE_PATH
+
 # Step 1: Build the application
 FROM node:18 AS builder
 
@@ -19,9 +21,6 @@ FROM node:18
 
 # Set the working directory
 WORKDIR /app
-
-# Define a build argument for the .env file location
-ARG ENV_FILE_PATH=/var/www/envs/production/orderyoursketch.com/.env
 
 # Copy the .env file from the external location into the Docker container
 COPY ${ENV_FILE_PATH} ./.env

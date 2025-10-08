@@ -20,6 +20,12 @@ FROM node:18
 # Set the working directory
 WORKDIR /app
 
+# Define a build argument for the .env file location
+ARG ENV_FILE_PATH=/var/www/envs/production/orderyoursketch.com/.env
+
+# Copy the .env file from the external location into the Docker container
+COPY ${ENV_FILE_PATH} ./.env
+
 # Install production dependencies
 COPY package.json package-lock.json ./
 RUN npm install --only=production
@@ -30,11 +36,11 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 
 # Expose the port on which the app will run
-EXPOSE 7001
+EXPOSE ${PORT}
 
 # Set the environment variable for the port
-ENV PORT=7001
+ENV PORT=${PORT}
 
 # Start the app in production mode
 # CMD ["npm", "start"]
-CMD ["npm", "run", "start", "--", "-p", "7001"]
+CMD ["npm", "run", "start", "--", "-p", "${PORT}"]

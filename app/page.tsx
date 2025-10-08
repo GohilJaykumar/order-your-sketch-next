@@ -15,6 +15,7 @@ export default function Home() {
         />
       </main>
       <div>ENVIRONMENT: {process.env.ENVIRONMENT ?? '-'}</div>
+      <div>CATEGORIES: {process.env.CATEGORIES ?? '-'}</div>
     </div>
   );
 }

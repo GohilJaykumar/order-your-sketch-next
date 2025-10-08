@@ -32,5 +32,9 @@ COPY --from=builder /app/node_modules ./node_modules
 # Expose the port on which the app will run
 EXPOSE 7001
 
+# Set the environment variable for the port
+ENV PORT=7001
+
 # Start the app in production mode
-CMD ["npm", "start"]
+# CMD ["npm", "start"]
+CMD ["npm", "run", "start", "--", "-p", "7001"]

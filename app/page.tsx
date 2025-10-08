@@ -14,6 +14,7 @@ export default function Home() {
           priority
         />
       </main>
+      <div>ENVIRONMENT: {process.env.ENVIRONMENT ?? '-'}</div>
     </div>
   );
 }

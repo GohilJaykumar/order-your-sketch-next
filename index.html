@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrderYourSketch - Handmade Portrait Gifts</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <style>
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+      .sketch-card:hover .sketch-img {
+        transform: scale(1.03);
+      }
+      .price-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Hero Section -->
+    <div id="vanta-bg" class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+      <div class="relative max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Gift a Piece of Art</h1>
+        <p class="text-xl md:text-2xl text-white mb-8">Handmade sketches that capture precious moments forever</p>
+        <a
+          href="#pricing"
+          class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
+        >
+          View Pricing
+        </a>
+      </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Pricing</h2>
+          <p class="mt-4 text-xl text-gray-600">Quality sketches at affordable prices</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <!-- Normal Sketch Card -->
+          <div class="price-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 ease-in-out">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Normal Sketch</h3>
+              <p class="text-gray-600 mb-6">Perfect for everyday gifts and memories</p>
+
+              <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
+                      <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Graphite</th>
+                      <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Charcoal</th>
+                      <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Extra</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">A4</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹1500</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹2500</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹500-700</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">A3</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹3500</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹4500</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹600-800</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- High Quality Sketch Card -->
+          <div class="price-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 ease-in-out">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">High Quality Sketch</h3>
+              <p class="text-gray-600 mb-6">Premium quality for special occasions</p>
+
+              <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
+                      <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Graphite</th>
+                      <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Charcoal</th>
+                      <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Extra</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">A4</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹3500</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹4500</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹700-1000</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">A3</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹5500</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹6500</td>
+                      <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">₹800-1100</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estimation Calculator -->
+    <section class="py-16 bg-gray-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden p-8">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Estimate Your Sketch</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <div class="mb-6">
+                <label for="sketch-type" class="block text-sm font-medium text-gray-700 mb-2">Sketch Type</label>
+                <select
+                  id="sketch-type"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <option value="normal">Normal Sketch</option>
+                  <option value="high">High Quality Sketch</option>
+                </select>
+              </div>
+
+              <div class="mb-6">
+                <label for="paper-size" class="block text-sm font-medium text-gray-700 mb-2">Paper Size</label>
+                <select
+                  id="paper-size"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <option value="A4">A4</option>
+                  <option value="A3">A3</option>
+                </select>
+              </div>
+
+              <div class="mb-6">
+                <label for="medium" class="block text-sm font-medium text-gray-700 mb-2">Medium</label>
+                <select id="medium" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                  <option value="graphite">Graphite</option>
+                  <option value="charcoal">Charcoal</option>
+                </select>
+              </div>
+              <div class="mb-6">
+                <label for="extra-faces" class="block text-sm font-medium text-gray-700 mb-2">Extra Faces</label>
+                <input
+                  type="number"
+                  id="extra-faces"
+                  min="0"
+                  value="0"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+              </div>
+
+              <div class="mb-6">
+                <label for="delivery-date" class="block text-sm font-medium text-gray-700 mb-2">Desired Delivery Date</label>
+                <input
+                  type="date"
+                  id="delivery-date"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  min=""
+                />
+              </div>
+
+              <button
+                id="calculate-btn"
+                class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-md transition duration-300"
+              >
+                Calculate Estimate
+              </button>
+            </div>
+
+            <div class="flex flex-col justify-center">
+              <div id="estimate-result" class="bg-gray-50 p-6 rounded-lg text-center hidden">
+                <span class="text-xl font-bold text-gray-900 mb-4">Your Estimate</span>
+                <span id="estimate-price" class="text-xl font-bold text-amber-600">₹0</span><br /><br />
+
+                <!-- Delivery Dates Section -->
+                <div class="mb-6">
+                  <div class="mb-4">
+                    <p class="text-sm text-gray-500">Estimated Completion Date</p>
+                    <span id="completion-date" class="text-xl font-semibold text-gray-900">-</span>
+                    (<span id="estimated-time" class="text-lg font-semibold text-gray-900">0 days</span>)
+                  </div>
+                  <div class="mb-4">
+                    <p class="text-sm text-gray-500">Desired Delivery Date</p>
+                    <span id="delivery-date-label">
+                      <span id="delivery-date-display" class="text-xl font-semibold text-gray-900">-</span>
+                      (<span id="delivery-estimated-time" class="text-lg font-semibold text-gray-900">0 days</span>)
+                    </span>
+                  </div>
+                </div>
+
+                <hr class="my-4 border-gray-300" />
+
+                <!-- Billing Details Section -->
+                <div class="text-left">
+                  <h4 class="font-bold text-gray-900 mb-3">Billing Details</h4>
+                  <div class="mb-2 flex justify-between">
+                    <span class="text-sm text-gray-600">Base Sketch Charges:</span>
+                    <span id="base-price" class="text-sm font-medium text-gray-900">₹0</span>
+                  </div>
+                  <div class="mb-2 flex justify-between">
+                    <span class="text-sm text-gray-600">Extra Face Charges (<span id="extra-faces-count">0</span> faces):</span>
+                    <span id="extra-faces-price" class="text-sm font-medium text-gray-900">₹0</span>
+                  </div>
+                  <div class="mb-2 flex justify-between hidden" id="urgency-charge-container">
+                    <span class="text-sm text-gray-600">Urgency Charge (<span id="urgency-charge-per-day">0</span>/per day):</span>
+                    <span id="urgency-charge" class="text-sm font-medium text-red-500">₹0</span>
+                  </div>
+                  <hr class="my-2 border-gray-300" />
+                  <div class="mb-4 flex justify-between">
+                    <span class="font-bold text-gray-900">Total Price:</span>
+                    <span id="total-price" class="text-xl font-bold text-amber-600">₹0</span>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                id="whatsapp-order-btn"
+                class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center gap-2 hidden mt-4"
+              >
+                <i data-feather="message-circle" class="w-5 h-5"></i> Place Order on WhatsApp with Above Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sketch Showcase -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Work</h2>
+          <p class="mt-4 text-xl text-gray-600">See examples of our beautiful sketches</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Sketch 1 -->
+          <div class="sketch-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+            <div class="h-64 overflow-hidden">
+              <img
+                src="http://static.photos/people/640x360/1"
+                alt="Sketch Example"
+                class="w-full h-full object-cover sketch-img transition duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Family Portrait</h3>
+              <p class="text-gray-600 mb-4">High Quality Charcoal on A3</p>
+              <button class="text-amber-600 font-medium hover:text-amber-700 transition duration-300">
+                View Details <i data-feather="arrow-right" class="inline ml-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Sketch 2 -->
+          <div class="sketch-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+            <div class="h-64 overflow-hidden">
+              <img
+                src="http://static.photos/people/640x360/2"
+                alt="Sketch Example"
+                class="w-full h-full object-cover sketch-img transition duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Couple Portrait</h3>
+              <p class="text-gray-600 mb-4">Normal Graphite on A4</p>
+              <button class="text-amber-600 font-medium hover:text-amber-700 transition duration-300">
+                View Details <i data-feather="arrow-right" class="inline ml-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Sketch 3 -->
+          <div class="sketch-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+            <div class="h-64 overflow-hidden">
+              <img
+                src="http://static.photos/people/640x360/3"
+                alt="Sketch Example"
+                class="w-full h-full object-cover sketch-img transition duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Pet Portrait</h3>
+              <p class="text-gray-600 mb-4">High Quality Graphite on A4</p>
+              <button class="text-amber-600 font-medium hover:text-amber-700 transition duration-300">
+                View Details <i data-feather="arrow-right" class="inline ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-16 bg-gray-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden p-8">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Contact Us</h2>
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                />
+              </div>
+              <div>
+                <label for="contact-phone" class="block text-sm font-medium text-gray-700 mb-1">Contact Number</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="contact-purpose" class="block text-sm font-medium text-gray-700 mb-1">Purpose</label>
+              <input
+                type="text"
+                id="contact-purpose"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="contact-details" class="block text-sm font-medium text-gray-700 mb-1">Details (Optional)</label>
+              <textarea
+                id="contact-details"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              ></textarea>
+            </div>
+
+            <button
+              type="button"
+              id="send-whatsapp"
+              class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center gap-2"
+            >
+              <i data-feather="message-circle" class="w-5 h-5"></i> Send WhatsApp Message
+            </button>
+          </form>
+
+          <script>
+            document.getElementById("send-whatsapp").addEventListener("click", function () {
+              const name = document.getElementById("contact-name").value;
+              const phone = document.getElementById("contact-phone").value;
+              const purpose = document.getElementById("contact-purpose").value;
+              const details = document.getElementById("contact-details").value;
+
+              if (!name || !phone || !purpose) {
+                alert("Please fill in all required fields");
+                return;
+              }
+
+              let message = `Hello! I'm interested in ordering a sketch.%0A%0A`;
+              message += `*Name:* ${name}%0A`;
+              message += `*Contact:* ${phone}%0A`;
+              message += `*Purpose:* ${purpose}%0A`;
+
+              if (details) {
+                message += `*Details:* ${details}%0A`;
+              }
+
+              window.open(`https://wa.me/918160544873?text=${message}`, "_blank");
+            });
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/918160544873" target="_blank" class="fixed bottom-8 right-8 z-50">
+      <div class="pulse bg-green-500 text-white p-4 rounded-full shadow-xl">
+        <i data-feather="message-circle" class="w-6 h-6"></i>
+      </div>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">OrderYourSketch</h3>
+            <p class="text-gray-400">Creating beautiful handmade sketches to capture your precious moments.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="#pricing" class="text-gray-400 hover:text-white transition duration-300">Pricing</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Gallery</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <i data-feather="facebook"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <i data-feather="instagram"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <i data-feather="twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <p>&copy; 2023 OrderYourSketch. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Pricing data from JSON structure
+      const pricingData = {
+        "Normal Sketch": {
+          A4: {
+            Graphite: {
+              price: 1500,
+              extra_face: 500,
+              estimation: {
+                normal_time: 4,
+                extra_face_time: 0.5,
+              },
+            },
+            Charcoal: {
+              price: 2500,
+              extra_face: 600,
+              estimation: {
+                normal_time: 4,
+                extra_face_time: 0.5,
+              },
+            },
+          },
+          A3: {
+            Graphite: {
+              price: 3500,
+              extra_face: 700,
+              estimation: {
+                normal_time: 5,
+                extra_face_time: 0.5,
+              },
+            },
+            Charcoal: {
+              price: 4500,
+              extra_face: 800,
+              estimation: {
+                normal_time: 5,
+                extra_face_time: 0.5,
+              },
+            },
+          },
+        },
+        "High Quality Sketch": {
+          A4: {
+            Graphite: {
+              price: 3500,
+              extra_face: 700,
+              estimation: {
+                normal_time: 5,
+                extra_face_time: 1,
+              },
+            },
+            Charcoal: {
+              price: 4500,
+              extra_face: 800,
+              estimation: {
+                normal_time: 5,
+                extra_face_time: 1,
+              },
+            },
+          },
+          A3: {
+            Graphite: {
+              price: 5500,
+              extra_face: 1000,
+              estimation: {
+                normal_time: 7,
+                extra_face_time: 1.5,
+              },
+            },
+            Charcoal: {
+              price: 6500,
+              extra_face: 1100,
+              estimation: {
+                normal_time: 7,
+                extra_face_time: 1.5,
+              },
+            },
+          },
+        },
+        urgency_charge_per_day: 200,
+      };
+
+      // Set min date for delivery date picker
+      const today = new Date();
+      const minDate = today.toISOString().split("T")[0];
+      document.getElementById("delivery-date").min = minDate;
+
+      // Initialize Vanta.js background
+      VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0xf59e0b,
+        backgroundColor: 0x111827,
+        points: 10.0,
+        maxDistance: 20.0,
+        spacing: 15.0,
+      });
+
+      // Calculate estimate
+      document.getElementById("calculate-btn").addEventListener("click", function () {
+        const sketchType = document.getElementById("sketch-type").value === "normal" ? "Normal Sketch" : "High Quality Sketch";
+        const paperSize = document.getElementById("paper-size").value;
+        const medium = document.getElementById("medium").value === "graphite" ? "Graphite" : "Charcoal";
+        const extraFaces = parseInt(document.getElementById("extra-faces").value) || 0;
+        const deliveryDateInput = document.getElementById("delivery-date").value;
+
+        // Get base price and estimation data
+        const itemData = pricingData[sketchType][paperSize][medium];
+        const basePrice = itemData.price;
+        const extraPrice = itemData.extra_face * extraFaces;
+
+        // Calculate estimated production time
+        const baseDays = itemData.estimation.normal_time;
+        const extraDays = itemData.estimation.extra_face_time * extraFaces;
+        const totalProductionDays = Math.ceil(baseDays + extraDays);
+
+        // Calculate delivery date
+        const today = new Date();
+        const productionEndDate = new Date();
+        productionEndDate.setDate(today.getDate() + totalProductionDays);
+
+        // Format dates
+        const formatDate = (date) => date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+
+        // Display completion date
+        document.getElementById("completion-date").textContent = formatDate(productionEndDate);
+        // Calculate urgency charge
+        let urgencyCharge = 0;
+        let urgencyDays = 0;
+        if (deliveryDateInput) {
+          const deliveryDate = new Date(deliveryDateInput);
+          const daysDifference = Math.ceil((productionEndDate - deliveryDate) / (1000 * 60 * 60 * 24));
+
+          if (daysDifference > 0) {
+            urgencyCharge = daysDifference * pricingData.urgency_charge_per_day;
+            urgencyDays = daysDifference;
+          }
+
+          document.getElementById("delivery-date-display").textContent = formatDate(deliveryDate);
+        } else {
+          document.getElementById("delivery-date-display").textContent = formatDate(productionEndDate);
+        }
+        document.getElementById("urgency-charge-per-day").textContent = `₹${pricingData.urgency_charge_per_day}`;
+        document.getElementById("delivery-estimated-time").textContent = `${totalProductionDays - urgencyDays} days`;
+        // Calculate total price
+        const totalPrice = basePrice + extraPrice + urgencyCharge;
+
+        // Display results
+        document.getElementById("total-price").textContent = `₹${totalPrice}`;
+        document.getElementById("estimate-price").textContent = `₹${totalPrice}`;
+        document.getElementById("estimated-time").textContent = `${totalProductionDays} days`;
+
+        document.getElementById("base-price").textContent = `₹${basePrice}`;
+        document.getElementById("extra-faces-price").textContent = `₹${extraPrice}`;
+        document.getElementById("extra-faces-count").textContent = extraFaces;
+        if (urgencyCharge > 0) {
+          document.getElementById("urgency-charge").textContent = `₹${urgencyCharge}`;
+          document.getElementById("urgency-charge-container").classList.remove("hidden");
+        } else {
+          document.getElementById("urgency-charge-container").classList.add("hidden");
+        }
+        // Show results
+        document.getElementById("estimate-result").classList.remove("hidden");
+
+        // Show WhatsApp order button if total price > 0
+        const whatsappBtn = document.getElementById("whatsapp-order-btn");
+
+        if (totalPrice > 0) {
+          whatsappBtn.classList.remove("hidden");
+
+          // Remove previous click listener if any
+          const newButton = whatsappBtn.cloneNode(true);
+          whatsappBtn.parentNode.replaceChild(newButton, whatsappBtn);
+
+          // Add new click listener with current data
+          newButton.addEventListener("click", function () {
+            const formattedDeliveryDate = document.getElementById("delivery-date-label").textContent.trim();
+            const trimmedDate = formattedDeliveryDate.split("\n")[0].trim();
+            const trimmedDays = formattedDeliveryDate.split("\n")[1].trim();
+
+            let message = `Hello Jaykumar Gohil, %0AI would like to place an order for a sketch with the following details:%0A%0A`;
+            message += `*Sketch Type:* ${sketchType}%0A`;
+            message += `*Paper Size:* ${paperSize}%0A`;
+            message += `*Medium:* ${medium}%0A`;
+            message += `*Extra Faces:* ${extraFaces}%0A`;
+            message += `*Desired Delivery Date:* ${trimmedDate} ${trimmedDays}%0A%0A`;
+            message += `*Pricing Details:*%0A`;
+            message += `- Base Price: ₹${basePrice}%0A`;
+            if (extraFaces > 0) {
+              message += `- Extra Face Charges: (${extraFaces} faces) ₹${extraPrice}%0A`;
+            }
+            if (urgencyCharge > 0) {
+              message += `- Urgency Charge: (₹${pricingData.urgency_charge_per_day}/day) ₹${urgencyCharge}%0A`;
+            }
+            message += `%0A*Total Price:* ₹${totalPrice}%0A%0A`;
+            message += `Please confirm the order and provide payment details.`;
+
+            window.open(`https://wa.me/918160544873?text=${message}`, "_blank");
+          });
+        } else {
+          whatsappBtn.classList.add("hidden");
+        }
+
+        // if (totalPrice > 0) {
+        //   whatsappBtn.classList.remove("hidden");
+        //   whatsappBtn.addEventListener("click", function () {
+        //     const sketchType = document.getElementById("sketch-type").value === "normal" ? "Normal Sketch" : "High Quality Sketch";
+        //     const paperSize = document.getElementById("paper-size").value;
+        //     const medium = document.getElementById("medium").value === "graphite" ? "Graphite" : "Charcoal";
+        //     const extraFaces = parseInt(document.getElementById("extra-faces").value) || 0;
+        //     const formattedDeliveryDate = document.getElementById("delivery-date-label").textContent.trim();
+        //     console.log({ formattedDeliveryDate });
+        //     // Extract only the date (before the space and "days" part)
+        //     const trimmedDate = formattedDeliveryDate.split("\n")[0].trim();
+        //     const trimmedDays = formattedDeliveryDate.split("\n")[1].trim();
+
+        //     let message = `Hello Jaykumar Gohil, %0AI would like to place an order for a sketch with the following details:%0A%0A`;
+        //     message += `*Sketch Type:* ${sketchType}%0A`;
+        //     message += `*Paper Size:* ${paperSize}%0A`;
+        //     message += `*Medium:* ${medium}%0A`;
+        //     message += `*Extra Faces:* ${extraFaces}%0A`;
+        //     message += `*Desired Delivery Date:* ${trimmedDate} ${trimmedDays}%0A%0A`;
+        //     message += `*Pricing Details:*%0A`;
+        //     message += `- Base Price: ₹${document.getElementById("base-price").textContent.replace("₹", "")}%0A`;
+        //     if (extraFaces > 0) {
+        //       message += `- Extra Face Charges: (${extraFaces} faces) ₹${document
+        //         .getElementById("extra-faces-price")
+        //         .textContent.replace("₹", "")}%0A`;
+        //     }
+
+        //     if (urgencyCharge > 0) {
+        //       message += `- Urgency Charge: (₹${pricingData.urgency_charge_per_day}/day) ₹${urgencyCharge}%0A`;
+        //     }
+        //     message += `%0A*Total Price:* ₹${document.getElementById("total-price").textContent.replace("₹", "")}%0A%0A`;
+        //     message += `Please confirm the order and provide payment details.`;
+        //     window.open(`https://wa.me/918160544873?text=${message}`, "_blank");
+        //   });
+        // } else {
+        //   whatsappBtn.classList.add("hidden");
+        // }
+      });
+
+      // Initialize feather icons
+      feather.replace();
+    </script>
+  </body>
+</html>

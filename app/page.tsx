@@ -14,7 +14,8 @@ export default function Home() {
           priority
         />
       </main>
-      <div>ENVIRONMENT: {process.env.ENVIRONMENT ?? '-'}</div>
+      {/* <div>ENVIRONMENT: {process.env.ENVIRONMENT ?? '-'}</div> */}
+      <div>Version: 1.0.32</div>
       <div>CATEGORIES: {process.env.CATEGORIES ?? '-'}</div>
     </div>
   );

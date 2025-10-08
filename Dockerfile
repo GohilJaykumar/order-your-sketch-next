@@ -30,7 +30,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 
 # Expose the port on which the app will run
-EXPOSE 3000
+EXPOSE 7001
 
 # Start the app in production mode
 CMD ["npm", "start"]

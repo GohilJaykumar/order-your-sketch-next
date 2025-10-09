@@ -656,7 +656,13 @@
               message += `- Urgency Charge: (₹${pricingData.urgency_charge_per_day}/day) ₹${urgencyCharge}%0A`;
             }
             message += `%0A*Total Price:* ₹${totalPrice}%0A%0A`;
-            message += `Please confirm the order and provide payment details.`;
+            message += `Please confirm the order and provide payment details.%0A%0A`;
+
+            message += `----------%0A%0A`;
+            message += `*Terms and Conditions:*%0A`;
+            message += `To place an order, a 50% advance payment is required. Once the sketch is 50% complete and you’ve provided and confirmed your feedback, the remaining amount needs to be pay. After receiving the full payment, we will proceed with the final touches and send your sketch via courier.%0A%0A`;
+            message += `During the creation process, we allow time for feedback and changes. Any modifications can be made at this stage. However, once the final touches begin, no further changes will be accepted.%0A%0A`;
+            message += `These terms are set to ensure transparency and understanding between both parties.`;
 
             window.open(`https://wa.me/918160544873?text=${message}`, "_blank");
           });

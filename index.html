@@ -603,21 +603,31 @@
         // Calculate urgency charge
         let urgencyCharge = 0;
         let urgencyDays = 0;
+
+        let deliveryDaysDifference = 0;
         if (deliveryDateInput) {
           const deliveryDate = new Date(deliveryDateInput);
-          const daysDifference = Math.ceil((productionEndDate - deliveryDate) / (1000 * 60 * 60 * 24));
+          const daysDifference = Math.ceil((productionEndDate - deliveryDate) / (1000 * 60 * 60 * 24)) - 1;
 
           if (daysDifference > 0) {
             urgencyCharge = daysDifference * pricingData.urgency_charge_per_day;
             urgencyDays = daysDifference;
           }
 
+          deliveryDaysDifference = Math.ceil((deliveryDate - today) / (1000 * 60 * 60 * 24));
+
           document.getElementById("delivery-date-display").textContent = formatDate(deliveryDate);
         } else {
           document.getElementById("delivery-date-display").textContent = formatDate(productionEndDate);
         }
+
         document.getElementById("urgency-charge-per-day").textContent = `₹${pricingData.urgency_charge_per_day}`;
-        document.getElementById("delivery-estimated-time").textContent = `${totalProductionDays - urgencyDays} days`;
+
+        if (deliveryDaysDifference) {
+          document.getElementById("delivery-estimated-time").textContent = `${deliveryDaysDifference} days`;
+        } else {
+          document.getElementById("delivery-estimated-time").textContent = `${totalProductionDays - urgencyDays} days`;
+        }
         // Calculate total price
         const totalPrice = basePrice + extraPrice + urgencyCharge;
 
